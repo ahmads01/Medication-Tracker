@@ -1,18 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./Component/Navbar"; 
+import React from "react";
+import MedicationsPage from "./pages/MedicationsPage";
 
-
-
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Navbar /> 
-      <Routes>
-        {/*All Routes Will be here */}
-      </Routes>
-    </Router>
+    <>
+  
+    <MedicationsPage />
+ 
+    </>
   );
 }
-
-export default App;
