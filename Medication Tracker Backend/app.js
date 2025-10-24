@@ -5,7 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import connectDB from "./config.js";
-import userRoutes from "./Routes/userRoute.js";
+import MedicationRoutes from './Routes/MedicationRoutes.js'
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
-app.use("/api/users", userRoutes);
+app.use("/api/medications", MedicationRoutes );
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(` Server running on port ${PORT}`));

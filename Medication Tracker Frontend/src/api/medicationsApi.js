@@ -1,8 +1,36 @@
-import axios from "axios";
+const API_BASE = "http://localhost:5000/api/medications";
 
-const API_URL = "http://localhost:5000/api/medications";
+export async function getMedications() {
+  const res = await fetch(`${API_BASE}/get-all-medications`);
+  if (!res.ok) throw new Error("Failed to fetch medications");
+  return res.json();
+}
 
-export const getMedications = () => axios.get(API_URL);
-export const addMedication = (data) => axios.post(API_URL, data);
-export const updateMedication = (id, data) => axios.put(`${API_URL}/${id}`, data);
-export const deleteMedication = (id) => axios.delete(`${API_URL}/${id}`);
+export async function addMedication(data) {
+  const res = await fetch(`${API_BASE}/add-medications`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || "Failed to add medication");
+  }
+  return res.json();
+}
+
+export async function updateMedication(id, data) {
+  const res = await fetch(`${API_BASE}/update-medication/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error("Failed to update medication");
+  return res.json();
+}
+
+export async function deleteMedication(id) {
+  const res = await fetch(`${API_BASE}/delete-medication/${id}`, { method: "DELETE" });
+  if (!res.ok) throw new Error("Failed to delete medication");
+  return res.json();
+}
