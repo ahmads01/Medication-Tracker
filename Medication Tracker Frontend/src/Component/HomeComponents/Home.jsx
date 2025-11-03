@@ -185,7 +185,7 @@ export default function Home() {
           <h1 className="text-2xl font-semibold text-textPrimary">Today's Medications</h1>
           <p className="text-textSecondary text-gray-300">Your daily schedule</p>
         </div>
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           <SearchBar value={query} onChange={setQuery} />
           <button
             onClick={() => setShowAdd(true)}
@@ -193,7 +193,7 @@ export default function Home() {
           >
             + Add
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/*  Medication Cards */}

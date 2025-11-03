@@ -52,10 +52,10 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
   };
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-sm">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/30">
       {/* Background overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-indigo-800/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/40"
         onClick={() => {
           if (!saving) onCancel();
         }}
@@ -63,15 +63,15 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
 
       <form
         onSubmit={handleSubmit}
-        className="relative z-50 w-full max-w-md sm:max-w-lg bg-white rounded-2xl shadow-2xl p-6 sm:p-8 mx-4 transform transition-all scale-100 animate-fadeIn"
+        className="relative z-50 w-full max-w-md sm:max-w-lg bg-white rounded-2xl shadow-2xl p-6 sm:p-8 mx-4 transition-all"
       >
         <div className="flex items-start justify-between border-b pb-2 mb-4">
           <div>
             <h2 className="text-2xl font-bold text-blue-700">
               {initialData ? "Edit Medication" : "Add New Medication"}
             </h2>
-            <p className="text-sm text-gray-700  mt-1">
-               “Consistency in care is the best medicine of all.”
+            <p className="text-sm text-gray-600 mt-1">
+              “Consistency in care is the best medicine of all.”
             </p>
           </div>
           <button
@@ -93,7 +93,7 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
               onChange={handleChange}
               placeholder="e.g., Paracetamol"
               className={`w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm ${
-                errors.name ? "border-red-400" : "border-gray-200"
+                errors.name ? "border-red-400" : "border-gray-300"
               }`}
             />
             {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
@@ -107,7 +107,7 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
               onChange={handleChange}
               placeholder="e.g., 500mg / 1 tablet"
               className={`w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm ${
-                errors.dosage ? "border-red-400" : "border-gray-200"
+                errors.dosage ? "border-red-400" : "border-gray-300"
               }`}
             />
             {errors.dosage && <p className="text-xs text-red-500 mt-1">{errors.dosage}</p>}
@@ -120,7 +120,7 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
               name="time"
               value={formData.time}
               onChange={handleChange}
-              className="w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm border-gray-200"
+              className="w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm border-gray-300"
             />
           </label>
 
@@ -132,7 +132,7 @@ export default function MedicationForm({ initialData = null, onSubmit, onCancel 
               onChange={handleChange}
               rows={3}
               placeholder="Any additional notes..."
-              className="w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm border-gray-200"
+              className="w-full mt-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm border-gray-300"
             />
           </label>
         </div>
