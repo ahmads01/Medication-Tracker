@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import MedicationList from "../Component/MedicationComponents/MedicationList";
-import MedicationForm from "../Component/MedicationComponents/MedicationForm";
-import MedicationDetails from "../Component/MedicationComponents/MedicationDetails";
+import MedicationList from "../Component/MedicationList";
+import MedicationForm from "../Component/MedicationForm";
+import MedicationDetails from "../Component/MedicationDetails";
 import {
   getMedications,
   addMedication,
@@ -15,7 +15,7 @@ export default function MedicationsPage() {
   const [editingMed, setEditingMed] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [viewMed, setViewMed] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     setLoading(true);
@@ -53,7 +53,7 @@ export default function MedicationsPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 py-10 px-4 sm:px-6 lg:px-10">
+    <div className="min-h-screen  w-full bg-gradient-to-br from-blue-50 to-indigo-100 py-10 px-4 sm:px-6 lg:px-10">
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
           <div className="mb-4 sm:mb-0">
